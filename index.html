@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <link rel="icon" type="image/png" href="tictactoe.png">
+</head>
+<body>
+  <div class="container">
+    <div id="resultOverlay" class="overlay">
+    <div class="result-box">
+        <h1 id="resultText"></h1>
+        <button onclick="resetGame()">Play Again</button>
+    </div>
+</div>
+
+    <div class="left-panel">
+        <h1>TIC TAC TOE</h1>
+        <!-- <h4 id="status">Current Player: X</h4> -->
+         
+        <h4 id="status">Two Player Mode</h4>
+
+        <div class="mode-toggle">
+    <span>2 Player</span>
+
+    <label class="switch">
+        <input type="checkbox" id="modeSwitch" onchange="toggleMode()">
+        <span class="slider"></span>
+    </label>
+
+    <span>AI Mode</span>
+</div>
+    </div>
+
+    <div class="grid">
+        <div class="row">
+            <div onclick="handleClick(this)" id="0" class="col"></div>
+            <div onclick="handleClick(this)" id="1" class="col"></div>
+            <div onclick="handleClick(this)" id="2" class="col"></div>
+        </div>
+        <div class="row">
+            <div onclick="handleClick(this)" id="3" class="col"></div>
+            <div onclick="handleClick(this)" id="4" class="col"></div>
+            <div onclick="handleClick(this)" id="5" class="col"></div>
+        </div>
+        <div class="row">
+            <div onclick="handleClick(this)" id="6" class="col"></div>
+            <div onclick="handleClick(this)" id="7" class="col"></div>
+            <div onclick="handleClick(this)" id="8" class="col"></div>
+        </div>
+    </div>
+
+    <button id="resetBtn" onclick="resetGame()">Restart Game</button>
+
+</div>
+  <script src="script.js"></script>
+</body>
+</html>

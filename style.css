@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    background: white;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    height: 90px;
+    width: 90px;
+    margin: 5px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.col:hover {
+    background: #e2e6ff;
+    transform: scale(1.05);
+}
+
+.col:active {
+    transform: scale(0.95);
+}
+.grid {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #444;
+    font-weight: 500;
+}
+
+#resetBtn {
+    margin-top: 25px;  /* space from grid */
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#resetBtn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.left-panel {
+    display: flex;
+    flex-direction: column;   /* THIS makes Current Player go below title */
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Overlay Background */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* When active */
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Result Box */
+.result-box {
+    background: white;
+    padding: 50px 80px;
+    border-radius: 20px;
+    text-align: center;
+    animation: pop 0.3s ease;
+}
+
+/* Big Result Text */
+#resultText {
+    font-size: 50px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* Button inside result */
+.result-box button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Small pop animation */
+@keyframes pop {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
+}
+
+#modeBtn {
+    margin: 10px 0 20px 0;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #444;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#modeBtn:hover {
+    background: #222;
+}
+
+/* Toggle Container */
+.mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* When checked */
+input:checked + .slider {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
